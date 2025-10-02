@@ -1,0 +1,23 @@
+.service-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-box {
+  width: 615px;
+  height: 500px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-size: 30px
+}
+
+h3 {
+  font-size: 20px;
+}

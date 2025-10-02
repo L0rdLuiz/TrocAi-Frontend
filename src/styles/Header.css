@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #d6e0ea;
+  padding: 30px 80px;
+}
+
+.left {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.title {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.search {
+  flex: 0.5;
+  margin: 0 20px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.profile-icon {
+  font-size: 30px;
+}
