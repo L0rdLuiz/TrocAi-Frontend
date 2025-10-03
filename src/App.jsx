@@ -1,21 +1,19 @@
-import React from "react";
-import "./App.css";
-
-import Header from "./components/Header";
-import UserProfile from "./components/UserProfile";
-import ServiceDetails from "./components/ServiceDetails";
-import InterestButton from "./components/InterestButton";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Menu from "./pages/Menu";
+import Service from "./pages/Service";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main className="content">
-          <UserProfile />
-          <ServiceDetails />
-          <InterestButton />
-      </main>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/service/:id" element={<Service />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
