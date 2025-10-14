@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Menu from "./pages/Menu";
 import Service from "./pages/Service";
+import CreateService from "./pages/CreateService";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/service/:id" element={<Service />} />
+        <Route path="/create-service" element={<CreateService />} />
       </Routes>
     </BrowserRouter>
   );

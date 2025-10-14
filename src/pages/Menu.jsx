@@ -87,6 +87,7 @@ const Post = ({ oferta }) => {
 
 // 2. Componente Principal App (engloba Header, Busca e Feed)
 const App = () => {
+    const navigate = useNavigate();
     // 1. Estado para o termo de busca (substitui inputBusca.addEventListener)
     const [termoBusca, setTermoBusca] = useState('');
     // 2. Estado para os posts (substitui dadosMock)
@@ -110,7 +111,13 @@ const App = () => {
     // Renderiza a aplicação completa
     return (
         <div className="main-app-container">
-            <Header />
+                <Header />
+
+                <div style={{ padding: '8px', textAlign: 'right' }}>
+                    <button onClick={() => navigate('/create-service')} style={{ padding: '8px 12px' }}>
+                        Criar serviço
+                    </button>
+                </div>
 
             {/* Feed de Posts - Usando a classe CSS original */}
             <div className="feed">
