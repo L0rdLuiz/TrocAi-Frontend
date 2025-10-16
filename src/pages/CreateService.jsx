@@ -4,7 +4,7 @@ import { createService, getServices } from '../services/serviceService';
 const CreateService = () => {
   const [servico, setServico] = useState('');
   const [descricao, setDescricao] = useState('');
-  const [usuario, setUsuario] = useState(localStorage.getItem('userId') || '');
+  const [usuario] = useState(localStorage.getItem('userId') || '');
   const [servicos, setServicos] = useState([]);
   const [mensagem, setMensagem] = useState('');
 
@@ -15,8 +15,11 @@ const CreateService = () => {
       setMensagem('Serviço criado com sucesso!');
       setServico('');
       setDescricao('');
-      setServicos([...servicos, novoServico]);
+      // Atualiza a lista após criar
+      const dataAtualizada = await getServices();
+      setServicos(dataAtualizada);
     } catch (err) {
+      console.error(err);
       setMensagem('Erro ao criar serviço');
     }
   };
@@ -56,7 +59,7 @@ const CreateService = () => {
       <ul>
         {servicos.map((s) => (
           <li key={s._id}>
-            <strong>{s.servico}</strong> — {s.descricao} ({s.usuario})
+            <strong>{s.servico}</strong> — {s.descricao} ({s.usuario?.name || "Usuário Desconhecido"})
           </li>
         ))}
       </ul>

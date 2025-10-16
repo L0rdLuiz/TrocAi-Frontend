@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/Menu.css";
 
 import Header from "../components/Header";
-import { getAllServices } from "../services/getService"; // 👈 import correto
+import { getAllServices } from "../services/getService";
 
 // Componente que mostra um serviço
 const Post = ({ oferta }) => {
@@ -15,14 +15,11 @@ const Post = ({ oferta }) => {
 
     return (
         <div className="post">
-            {/* Cabeçalho */}
             <div className="cabecalho">
                 <div className="nome">
-                    <span>{oferta.usuario}</span>
+                    <span>{oferta.usuario?.name || "Usuário Padrão"}</span>
                 </div>
             </div>
-
-            {/* Conteúdo */}
             <div className="conteudo">
                 <div className="titulo">
                     <span>{oferta.servico}</span>
@@ -31,10 +28,8 @@ const Post = ({ oferta }) => {
                     <p>{oferta.descricao}</p>
                 </div>
             </div>
-
-            {/* Botão */}
             <div className="btn">
-                <button onClick={handleInterestClick}>
+                <button onClick={() => navigate(`/service/${oferta._id}`)}>
                     Tenho interesse!
                 </button>
             </div>
@@ -47,36 +42,56 @@ const Menu = () => {
     const navigate = useNavigate();
     const [servicos, setServicos] = useState([]);
     const [carregando, setCarregando] = useState(true);
+    const [termoBusca, setTermoBusca] = useState('');
 
-    // Buscar serviços do backend
     useEffect(() => {
         const carregarServicos = async () => {
+        try {
             const data = await getAllServices();
+            console.log("Dados recebidos:", data);
             setServicos(data);
+        } catch (err) {
+            console.error("Erro ao carregar serviços:", err);
+        } finally {
             setCarregando(false);
+        }
         };
         carregarServicos();
     }, []);
 
+    // LÓGICA DE FILTRAGEM: Agora usa a lista de serviços completa
+    const servicosFiltrados = useMemo(() => {
+        const termo = termoBusca.toLowerCase();
+        if (!termo) {
+            return servicos;
+        }
+
+        return servicos.filter(servico => {
+            const servicoTitulo = servico.servico || '';
+            const servicoDescricao = servico.descricao || '';
+            const usuarioNome = servico.usuario ? servico.usuario.name : '';
+
+            return servicoTitulo.toLowerCase().includes(termo) ||
+                   servicoDescricao.toLowerCase().includes(termo) ||
+                   usuarioNome.toLowerCase().includes(termo);
+        });
+    }, [servicos, termoBusca]);
+
     return (
         <div className="main-app-container">
-            <Header />
-
+            <Header onSearch={setTermoBusca} />
             <div style={{ padding: '8px', textAlign: 'right' }}>
                 <button onClick={() => navigate('/create-service')} style={{ padding: '8px 12px' }}>
                     Criar serviço
                 </button>
             </div>
-
             <div className="feed">
                 {carregando ? (
-                    <p style={{ padding: '8px', color: '#555' }}>Carregando serviços...</p>
-                ) : servicos.length === 0 ? (
-                    <p style={{ padding: '8px', color: '#555' }}>Nenhum serviço encontrado.</p>
+                    <p>Carregando serviços...</p>
+                ) : servicosFiltrados.length === 0 ? (
+                    <p>Nenhum serviço encontrado.</p>
                 ) : (
-                    servicos.map((s) => (
-                        <Post key={s._id} oferta={s} />
-                    ))
+                    servicosFiltrados.map((s) => <Post key={s._id} oferta={s} />)
                 )}
             </div>
         </div>
