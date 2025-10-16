@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/ServiceDetails.css";
 
-function ServiceDetails() {
+function ServiceDetails({ servico }) {
   return (
     <div className="service-details">
-      <h2>Titulo do Serviço</h2>
-      <h3>Nome do Usuário</h3>
-      <div class="info-box">Informação do serviço</div>
+      <h2>{servico.servico}</h2>
+      <h3>{servico.usuario?.name || "Usuário Padrão"}</h3>
+      <div className="info-box">{servico.descricao}</div>
     </div>
   );
 }
