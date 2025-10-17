@@ -29,7 +29,7 @@ const Post = ({ oferta }) => {
                 </div>
             </div>
             <div className="btn">
-                <button onClick={() => navigate(`/service/${oferta._id}`)}>
+                <button onClick={() => navigate(`/service/${oferta._id}`)} class="buttonMenu">
                     Tenho interesse!
                 </button>
             </div>
@@ -59,7 +59,6 @@ const Menu = () => {
         carregarServicos();
     }, []);
 
-    // LÓGICA DE FILTRAGEM: Agora usa a lista de serviços completa
     const servicosFiltrados = useMemo(() => {
         const termo = termoBusca.toLowerCase();
         if (!termo) {
@@ -78,21 +77,23 @@ const Menu = () => {
     }, [servicos, termoBusca]);
 
     return (
-        <div className="main-app-container">
-            <Header onSearch={setTermoBusca} />
-            <div style={{ padding: '8px', textAlign: 'right' }}>
-                <button onClick={() => navigate('/create-service')} style={{ padding: '8px 12px' }}>
-                    Criar serviço
-                </button>
-            </div>
-            <div className="feed">
-                {carregando ? (
-                    <p>Carregando serviços...</p>
-                ) : servicosFiltrados.length === 0 ? (
-                    <p>Nenhum serviço encontrado.</p>
-                ) : (
-                    servicosFiltrados.map((s) => <Post key={s._id} oferta={s} />)
-                )}
+        <div class="bodyMenu">
+            <div className="main-app-container">
+                <Header onSearch={setTermoBusca} />
+                <div style={{ padding: '8px', textAlign: 'right' }}>
+                    <button onClick={() => navigate('/create-service')} style={{ padding: '8px 12px' , marginTop: '10px'}} class="buttonMenu">
+                        Criar serviço
+                    </button>
+                </div>
+                <div className="feed">
+                    {carregando ? (
+                        <p>Carregando serviços...</p>
+                    ) : servicosFiltrados.length === 0 ? (
+                        <p>Nenhum serviço encontrado.</p>
+                    ) : (
+                        servicosFiltrados.map((s) => <Post key={s._id} oferta={s} />)
+                    )}
+                </div>
             </div>
         </div>
     );

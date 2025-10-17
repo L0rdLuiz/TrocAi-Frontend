@@ -1,0 +1,255 @@
+.body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+}
+
+.logo a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+#busca {
+    width: 50%;
+    padding: 8px 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+
+.img1 {
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid #818c96;
+    cursor: pointer;
+}
+
+
+.profile {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.img-profile {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.name {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.rate {
+    display: block;
+    color: #ffcc00;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn-profile {
+    background-color: #3268F2;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.sec-servicos1 {
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.parte-cima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-novo-servico {
+    background-color: #23AA2C;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.box {
+    border: 1.5px solid #ccc;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.my-service {
+    color: #FF2A2A;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.desc-my-service {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #000;
+}
+
+.box-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar {
+    background-color: #979797;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-excluir {
+    background-color: #dd1d1d;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.status.amarelo {
+    background-color: #FFEB85;
+    color: #be7631;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+.sec-servicos2 {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.box-pedido {
+    border: 1.5px solid #ccc;
+    background-color: #E9E9E9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.box-pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.user-name {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.service-title {
+    color: #d92a2a;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+.status-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.status-dot.azul {
+    background-color: #3268F2;
+}
+
+.status-dot.verde {
+    background-color: #23AA2C;
+}
+
+.status-dot.vermelho {
+    background-color: #dd1d1d;
+}
+
+.box-pedido-middle p {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #333;
+}
+
+.box-pedido-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-ajuda {
+    background-color: #383838;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn-status {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-status.finalizar {
+    background-color: #23AA2C;
+}
+
+.btn-status.finalizado {
+    background-color: #979797;
+}
+
+.btn-status.cancelado {
+    background-color: #dd1d1d;
+}

@@ -20,7 +20,7 @@ function Login() {
         alert("Login bem-sucedido!");
         localStorage.setItem("userToken", data.token);
         localStorage.setItem("userId", data.userId);
-        navigate("/menu"); // Navega para a página de menu
+        navigate("/menu");
       } else {
         alert(data.message);
       }
@@ -30,34 +30,36 @@ function Login() {
   };
 
   return (
-    <div class="card">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <p>
-          E-mail
-          <input 
-            type="email" 
-            id="inemail" 
-            name="email" 
-            required 
-            onChange={(e) => setEmail(e.target.value)} 
-          />
-        </p>
-        <p>
-          Senha
-          <input 
-            type="password" 
-            id="insenha" 
-            name="senha" 
-            required 
-            onChange={(e) => setPassword(e.target.value)} 
-          />
-        </p>
-        <button type="submit">Login</button>
-        <Link to="/register">
-          <button type="button">Cadastro</button>
-        </Link>
-      </form>
+    <div class="bodyLogin">
+      <div class="cardLogin">
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit} class="formLogin">
+          <p>
+            E-mail
+            <input 
+              type="email" 
+              id="inemail" 
+              name="email" 
+              required 
+              onChange={(e) => setEmail(e.target.value)} 
+            />
+          </p>
+          <p>
+            Senha
+            <input 
+              type="password" 
+              id="insenha" 
+              name="senha" 
+              required 
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+          </p>
+          <button type="submit">Login</button>
+          <Link to="/register">
+            <button type="button">Cadastro</button>
+          </Link>
+        </form>
+      </div>
     </div>
   );
 }

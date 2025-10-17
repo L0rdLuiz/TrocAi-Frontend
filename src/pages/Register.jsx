@@ -29,45 +29,46 @@ function Register() {
   };
 
   return (
-    <div class="card">
-      <h1>Cadastrar</h1>
-      <form onSubmit={handleSubmit}>
-        <p>
-          Nome
-          <input 
-            type="text" 
-            id="inNome" 
-            name="nome" 
-            required 
-            onChange={(e) => setName(e.target.value)} 
-          />
-        </p>
-        <p>
-          E-mail
-          <input 
-            type="email" 
-            id="inemail" 
-            name="email" 
-            required 
-            onChange={(e) => setEmail(e.target.value)} 
-          />
-        </p>
-        <p>
-          Senha
-          <input 
-            type="password" 
-            id="insenha" 
-            name="senha" 
-            required 
-            onChange={(e) => setPassword(e.target.value)} 
-          />
-        </p>
-        {/* Removido o <h3 id="resp"> pois o React gerencia a resposta */}<p></p>
-        <button type="submit">Cadastrar</button>
-        <Link to="/">
-          <button type="button">Login</button>
-        </Link>
-      </form>
+    <div class="bodyLogin">
+      <div class="cardLogin">
+        <h1>Cadastrar</h1>
+        <form onSubmit={handleSubmit} class="formLogin">
+          <p>
+            Nome
+            <input 
+              type="text" 
+              id="inNome" 
+              name="nome" 
+              required 
+              onChange={(e) => setName(e.target.value)} 
+            />
+          </p>
+          <p>
+            E-mail
+            <input 
+              type="email" 
+              id="inemail" 
+              name="email" 
+              required 
+              onChange={(e) => setEmail(e.target.value)} 
+            />
+          </p>
+          <p>
+            Senha
+            <input 
+              type="password" 
+              id="insenha" 
+              name="senha" 
+              required 
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+          </p>
+          <button type="submit">Cadastrar</button>
+          <Link to="/">
+            <button type="button">Login</button>
+          </Link>
+        </form>
+      </div>
     </div>
   );
 }

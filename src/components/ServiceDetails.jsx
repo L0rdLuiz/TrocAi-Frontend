@@ -4,8 +4,8 @@ import "../styles/ServiceDetails.css";
 function ServiceDetails({ servico }) {
   return (
     <div className="service-details">
-      <h2>{servico.servico}</h2>
-      <h3>{servico.usuario?.name || "Usuário Padrão"}</h3>
+      <h2 class="h2ServiceDetails">{servico.servico}</h2>
+      <h3 class="h3ServiceDetails">{servico.usuario?.name || "Usuário Padrão"}</h3>
       <div className="info-box">{servico.descricao}</div>
     </div>
   );

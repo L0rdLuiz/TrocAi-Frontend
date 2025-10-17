@@ -1,4 +1,4 @@
-body {
+.bodyLogin {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@ body {
     height: 100vh;
 }
 
-.card {
+.cardLogin {
     background-color: #ffffff;
     border: 1px solid #3d3a3a;
     padding: 20px 30px;
@@ -21,7 +21,7 @@ body {
     width: 300px;
 }
 
-form button {
+.formLogin button {
     width: 40%;
     padding: 10px;
     background-color: #a8b8c8;
@@ -29,14 +29,13 @@ form button {
     border-radius: 20px;
     cursor: pointer;
     color: #fff;
-
 }
 
-form button:hover {
+.formLogin button:hover {
     background-color: #7a8a9a;
 }
 
-form input {
+.formLogin input {
     width: 100%;
     padding: 8px 10px;
     margin-top: 5px;
