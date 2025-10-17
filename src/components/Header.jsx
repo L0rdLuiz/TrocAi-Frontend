@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Header.css";
 
 function Header({ onSearch }) {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearchChange = (e) => {
@@ -13,7 +15,9 @@ function Header({ onSearch }) {
     return (
         <header className="header">
             <div className="left">
-                <div className="title">TrocAí</div>
+                <div className="title" onClick={() => navigate('/menu')} style={{ cursor: 'pointer' }}>
+                    TrocAí
+                </div>
             </div>
             <input 
                 type="text" 
@@ -22,7 +26,9 @@ function Header({ onSearch }) {
                 value={searchTerm}
                 onChange={handleSearchChange}
             />
-            <div className="profile-icon">👤</div>
+            <div className="profile-icon" onClick={() => navigate('/profile')} style={{ cursor: 'pointer' }}>
+                👤
+            </div>
         </header>
     );
 }
