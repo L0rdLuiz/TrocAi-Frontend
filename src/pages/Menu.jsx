@@ -5,7 +5,6 @@ import "../styles/Menu.css";
 import Header from "../components/Header";
 import { getAllServices } from "../services/getService";
 
-// Componente que mostra um serviço
 const Post = ({ oferta }) => {
     const navigate = useNavigate();
 
@@ -37,7 +36,6 @@ const Post = ({ oferta }) => {
     );
 };
 
-// Componente principal
 const Menu = () => {
     const navigate = useNavigate();
     const [servicos, setServicos] = useState([]);

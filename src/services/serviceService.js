@@ -1,4 +1,3 @@
-// services/serviceService.js
 const API_URL = 'http://localhost:3000/api/services';
 
 export const createService = async (servico, descricao, usuario) => {

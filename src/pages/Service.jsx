@@ -54,13 +54,10 @@ function Service() {
     <div className="App">
       <Header />
       <main className="content">
-        {/* avatar ou imagem do usuário */}
         <UserProfile usuario={servico.usuario} />
 
-        {/* título, nome do usuário e descrição */}
         <ServiceDetails servico={servico} />
 
-        {/* botão de interesse */}
         <InterestButton servico={servico} />
       </main>
     </div>

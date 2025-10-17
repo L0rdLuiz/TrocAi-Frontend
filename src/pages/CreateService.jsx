@@ -19,7 +19,6 @@ const CreateService = () => {
       setErro(false);
       setServico('');
       setDescricao('');
-      // Atualiza a lista após criar
       const dataAtualizada = await getServices();
       setServicos(dataAtualizada);
     } catch (err) {

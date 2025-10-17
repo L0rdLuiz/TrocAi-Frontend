@@ -18,7 +18,6 @@ export default function Profile() {
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Buscar serviços do banco
   useEffect(() => {
     const fetchServicos = async () => {
       try {
@@ -33,7 +32,6 @@ export default function Profile() {
     fetchServicos();
   }, []);
 
-  // Excluir serviço
   const handleDelete = async (id) => {
     try {
       await deleteService(id);
@@ -44,7 +42,6 @@ export default function Profile() {
     }
   };
 
-  // Finalizar serviço (mostra popup e depois exclui)
   const handleFinalize = async (id) => {
     try {
       await deleteService(id);
@@ -57,7 +54,6 @@ export default function Profile() {
     }
   };
 
-  // Editar serviço (navega para rota de edição)
   const handleEdit = (id) => {
     navigate(`/edit-service/${id}`);
   };
@@ -136,7 +132,6 @@ export default function Profile() {
           </div>
         </section>
 
-        {/* Popup de serviço finalizado */}
         {showPopup && (
           <div style={{
             position: 'fixed',

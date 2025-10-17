@@ -14,46 +14,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route 
-          path="/menu" 
-          element={
-            <ProtectedRoute>
-              <Menu />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/service/:id" 
-          element={
-            <ProtectedRoute>
-              <Service />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/create-service" 
-          element={
-            <ProtectedRoute>
-              <CreateService />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/edit-service/:id" 
-          element={
-            <ProtectedRoute>
-              <EditService />
-            </ProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/profile" 
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          } 
-        />
+        <Route path="/menu" element={<ProtectedRoute> <Menu /> </ProtectedRoute>} />
+        <Route path="/service/:id" element={<ProtectedRoute> <Service /> </ProtectedRoute>} />
+        <Route path="/create-service" element={<ProtectedRoute> <CreateService /> </ProtectedRoute>} />
+        <Route path="/edit-service/:id" element={<ProtectedRoute> <EditService /> </ProtectedRoute>} />
+        <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

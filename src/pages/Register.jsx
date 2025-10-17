@@ -19,7 +19,7 @@ function Register() {
       const data = await response.json();
       if (response.ok) {
         alert("Cadastro realizado com sucesso!");
-        navigate("/"); // Navega para a página de login após o sucesso
+        navigate("/");
       } else {
         alert(data.message);
       }
