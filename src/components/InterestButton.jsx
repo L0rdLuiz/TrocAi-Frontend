@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/InterestButton.css";
 
-function InterestButton() {
+function InterestButton({ onClick, disabled, label = "Tenho Interesse" }) {
   return (
-    <button className="interest-btn">Tenho Interesse</button>
+    <button className="interest-btn" onClick={onClick} disabled={disabled}>
+      {label}
+    </button>
   );
 }
 

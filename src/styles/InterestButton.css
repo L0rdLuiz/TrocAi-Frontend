@@ -15,3 +15,8 @@
 .interest-btn:hover {
   background: #2c5480;
 }
+
+.interest-btn:disabled {
+  background: #9fb6d3;
+  cursor: not-allowed;
+}
